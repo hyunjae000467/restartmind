@@ -12,6 +12,7 @@ import { Radar } from 'react-chartjs-2';
 import { types, questions } from '../data/questions';
 import { columns } from '../data/columns';
 import ServiceModal from './ServiceModal';
+import { useLikes } from '../hooks/useLikes';
 
 ChartJS.register(
     RadialLinearScale,
@@ -24,6 +25,7 @@ ChartJS.register(
 
 const ResultScreen = ({ answers, onRestart, onViewAll }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const { toggleLike, isLiked, getLikeCount } = useLikes();
 
     const resultData = useMemo(() => {
         const scores = {};
@@ -127,6 +129,11 @@ const ResultScreen = ({ answers, onRestart, onViewAll }) => {
         setIsModalOpen(true);
     };
 
+    const handleLikeClick = (e, id) => {
+        e.stopPropagation(); // Prevent card click (modal)
+        toggleLike(id);
+    };
+
     const getStyleLabel = (style) => {
         if (style === 'empathy') return '공감형';
         if (style === 'advice') return '조언형';
@@ -220,6 +227,29 @@ const ResultScreen = ({ answers, onRestart, onViewAll }) => {
                                     </p>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                                         <span>{col.author} | {col.university} {col.major}</span>
+                                        <button
+                                            onClick={(e) => handleLikeClick(e, col.id)}
+                                            style={{
+                                                background: 'transparent',
+                                                border: 'none',
+                                                cursor: 'pointer',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '6px',
+                                                padding: '4px',
+                                                color: isLiked(col.id) ? '#ff4b4b' : 'var(--text-secondary)',
+                                                transition: 'transform 0.1s'
+                                            }}
+                                            onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.9)'}
+                                            onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                        >
+                                            <span style={{ fontSize: '1.2rem' }}>
+                                                {isLiked(col.id) ? '♥' : '♡'}
+                                            </span>
+                                            <span style={{ fontSize: '0.9rem', fontWeight: '600' }}>
+                                                {getLikeCount(col.id, col.likes)}
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             ))}

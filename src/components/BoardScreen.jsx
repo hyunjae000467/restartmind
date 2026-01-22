@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { columns } from '../data/columns';
 import { types } from '../data/questions';
 import ServiceModal from './ServiceModal';
+import { useLikes } from '../hooks/useLikes';
 
 const BoardScreen = ({ onBack }) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -9,6 +10,8 @@ const BoardScreen = ({ onBack }) => {
     const [selectedAuthorCategory, setSelectedAuthorCategory] = useState('all');
     const [selectedStyle, setSelectedStyle] = useState('all');
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const { toggleLike, isLiked, getLikeCount } = useLikes();
 
     // Extract unique author categories
     const authorCategories = useMemo(() => {
@@ -31,6 +34,11 @@ const BoardScreen = ({ onBack }) => {
 
     const handleColumnClick = () => {
         setIsModalOpen(true);
+    };
+
+    const handleLikeClick = (e, id) => {
+        e.stopPropagation(); // Prevent card click (modal)
+        toggleLike(id);
     };
 
     const getStyleLabel = (style) => {
@@ -136,7 +144,8 @@ const BoardScreen = ({ onBack }) => {
                             cursor: 'pointer',
                             transition: 'box-shadow 0.2s, transform 0.2s',
                             textAlign: 'left',
-                            border: '1px solid #f0f0f0'
+                            border: '1px solid #f0f0f0',
+                            position: 'relative'
                         }}
                             onMouseOver={(e) => {
                                 e.currentTarget.style.boxShadow = 'var(--shadow-2)';
@@ -169,8 +178,34 @@ const BoardScreen = ({ onBack }) => {
                             <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '16px', lineHeight: '1.6', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical' }}>
                                 {col.summary}
                             </p>
-                            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: 'auto' }}>
-                                {col.author} | {col.university} {col.major}
+
+                            <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                                    {col.author} | {col.university} {col.major}
+                                </div>
+                                <button
+                                    onClick={(e) => handleLikeClick(e, col.id)}
+                                    style={{
+                                        background: 'transparent',
+                                        border: 'none',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '6px',
+                                        padding: '4px',
+                                        color: isLiked(col.id) ? '#ff4b4b' : 'var(--text-secondary)',
+                                        transition: 'transform 0.1s'
+                                    }}
+                                    onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.9)'}
+                                    onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                >
+                                    <span style={{ fontSize: '1.2rem' }}>
+                                        {isLiked(col.id) ? '♥' : '♡'}
+                                    </span>
+                                    <span style={{ fontSize: '0.9rem', fontWeight: '600' }}>
+                                        {getLikeCount(col.id, col.likes)}
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     ))

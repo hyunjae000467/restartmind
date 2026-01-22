@@ -8,7 +8,8 @@ export const columns = [
         major: "컴퓨터공학부",
         summary: "성적이 정체될 때는 학습의 절대량보다는 학습의 질을 점검해야 함. 무의식적인 반복 학습보다는 메타인지를 활용한 약점 분석이 중요하다고 강조함.",
         relatedTypes: ["Grade Stagnation", "Goal Loss"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 42
     },
     {
         id: 2,
@@ -19,7 +20,8 @@ export const columns = [
         major: "시스템반도체공학과",
         summary: "불안감은 불확실성에서 옴. 하루에 해야 할 일의 우선순위를 정하고 하나씩 지워나가는 과정에서 성취감을 느끼면 멘탈을 회복할 수 있다고 조언함.",
         relatedTypes: ["Mental Collapse", "Motivation Loss"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 128
     },
     {
         id: 3,
@@ -30,7 +32,8 @@ export const columns = [
         major: "의과대학",
         summary: "장시간 공부는 체력을 급격히 소모함. 쉬는 시간 10분을 활용한 간단한 스트레칭과 가벼운 산책만으로도 집중력을 유지할 수 있다고 함.",
         relatedTypes: ["Physical Exhaustion"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 56
     },
     {
         id: 4,
@@ -41,7 +44,8 @@ export const columns = [
         major: "약학과",
         summary: "고립감은 공부의 적임. 스터디 카페나 도서관 등 개방된 공간을 활용하거나, '캠스터디' 등을 통해 함께 공부하는 느낌을 받는 것이 좋다고 함.",
         relatedTypes: ["Isolation"],
-        columnStyle: "empathy"
+        columnStyle: "empathy",
+        likes: 89
     },
     {
         id: 5,
@@ -52,7 +56,8 @@ export const columns = [
         major: "화공생명공학과",
         summary: "환경 변화는 누구에게나 스트레스임. 나만의 루틴을 빠르게 만들고, 익숙한 물건을 배치하여 심리적 안정감을 찾는 것이 중요하다고 함.",
         relatedTypes: ["Environment Maladaptation"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 34
     },
     {
         id: 6,
@@ -63,7 +68,8 @@ export const columns = [
         major: "기계공학부",
         summary: "거창한 목표보다는 당장 오늘 끝내야 할 분량에 집중하는 것이 좋음. 작은 목표를 달성하다 보면 큰 목표가 보이기 시작한다고 함.",
         relatedTypes: ["Goal Loss", "Motivation Loss"],
-        columnStyle: "empathy"
+        columnStyle: "empathy",
+        likes: 215
     },
     {
         id: 7,
@@ -74,7 +80,8 @@ export const columns = [
         major: "의학부",
         summary: "모의고사는 진단 도구일 뿐임. 틀린 문제를 통해 약점을 발견한 것에 감사하고, 수능 날 틀리지 않으면 된다는 마인드셋을 가져야 한다고 함.",
         relatedTypes: ["Mock Exam", "Mental Collapse"],
-        columnStyle: "empathy"
+        columnStyle: "empathy",
+        likes: 172
     },
     {
         id: 8,
@@ -85,7 +92,8 @@ export const columns = [
         major: "한의예과",
         summary: "선택과목 변경은 신중해야 함. 단순히 등급 컷 때문인지, 적성에 맞지 않아서인지 명확히 분석하고, 변경 시 발생할 학습 부담을 고려해야 한다고 함.",
         relatedTypes: ["Optional Subject"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 63
     },
     {
         id: 9,
@@ -96,7 +104,8 @@ export const columns = [
         major: "바이오메디컬공학부",
         summary: "의욕이 생겨서 행동하는 것이 아니라, 행동하면 의욕이 생김. 일단 책상에 앉아 책을 펼치는 것부터 시작하면 뇌가 공부 모드로 전환된다고 함.",
         relatedTypes: ["Motivation Loss"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 298
     },
     {
         id: 10,
@@ -107,7 +116,8 @@ export const columns = [
         major: "수리과학부",
         summary: "오답노트는 예쁘게 만드는 게 아님. 왜 틀렸는지 사고 과정을 복기하고, 다시 틀리지 않으려면 어떤 개념을 봐야 하는지 적는 것이 핵심이라고 함.",
         relatedTypes: ["Grade Stagnation"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 145
     },
     {
         id: 11,
@@ -118,7 +128,8 @@ export const columns = [
         major: "소프트웨어학과",
         summary: "디데이에 압도되지 말고, 하루하루의 계획을 지키는 것에 집중해야 함. 규칙적인 생활 패턴이 멘탈을 지켜주는 가장 큰 무기라고 함.",
         relatedTypes: ["Mental Collapse", "Mock Exam"],
-        columnStyle: "empathy"
+        columnStyle: "empathy",
+        likes: 92
     },
     {
         id: 12,
@@ -129,7 +140,8 @@ export const columns = [
         major: "약학과",
         summary: "점심시간에 영어 단어를 외우거나 듣기 평가를 하는 등 자투리 시간을 활용하면 누적 학습량이 엄청나다고 강조함.",
         relatedTypes: ["Physical Exhaustion", "Motivation Loss"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 77
     },
     {
         id: 13,
@@ -140,7 +152,8 @@ export const columns = [
         major: "디지털아트과",
         summary: "건강한 라이벌 관계는 시너지를 냄. 하지만 감정 소모가 심한 관계는 과감히 정리하고 공부에 집중하는 것이 필요하다고 조언함.",
         relatedTypes: ["Isolation"],
-        columnStyle: "empathy"
+        columnStyle: "empathy",
+        likes: 113
     },
     {
         id: 14,
@@ -151,7 +164,8 @@ export const columns = [
         major: "정보디스플레이학과",
         summary: "자기 통제력이 부족하면 관리형 환경이 유리함. 하지만 스스로 계획을 세우고 실천하는 힘이 있다면 독학이 효율적일 수 있다고 비교 분석함.",
         relatedTypes: ["Environment Maladaptation"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 84
     },
     {
         id: 15,
@@ -162,7 +176,8 @@ export const columns = [
         major: "전기전자공학부",
         summary: "슬럼프는 성장의 신호임. 자신이 성장하고 있다는 믿음을 가지고 꾸준히 책상 앞에 앉아있는 끈기가 중요하다고 경험담을 공유함.",
         relatedTypes: ["Grade Stagnation", "Motivation Loss"],
-        columnStyle: "empathy"
+        columnStyle: "empathy",
+        likes: 201
     },
     {
         id: 16,
@@ -173,7 +188,8 @@ export const columns = [
         major: "신소재공학과",
         summary: "표준점수만 보고 과목을 선택하는 것은 위험함. 자신이 흥미를 느끼고 꾸준히 공부할 수 있는 과목을 선택하는 것이 고득점의 지름길이라고 함.",
         relatedTypes: ["Optional Subject"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 58
     },
     {
         id: 17,
@@ -184,7 +200,8 @@ export const columns = [
         major: "수의예과",
         summary: "진로는 언제든 바뀔 수 있음. 중요한 것은 현재의 배움이 미래의 어떤 길로든 연결된다는 믿음을 가지는 것이라고 위로함.",
         relatedTypes: ["Goal Loss"],
-        columnStyle: "empathy"
+        columnStyle: "empathy",
+        likes: 134
     },
     {
         id: 18,
@@ -195,7 +212,8 @@ export const columns = [
         major: "식품영양학과",
         summary: "초콜릿 같은 단순 당보다는 견과류나 바나나 등 혈당을 서서히 올리는 간식이 집중력 유지에 더 도움이 된다고 추천함.",
         relatedTypes: ["Physical Exhaustion"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 95
     },
     {
         id: 19,
@@ -206,7 +224,8 @@ export const columns = [
         major: "AI학과",
         summary: "계획 없는 공부는 목적지 없는 항해와 같음. 10분 투자로 하루의 효율을 극대화할 수 있는 플래너 작성법을 소개함.",
         relatedTypes: ["Motivation Loss", "Grade Stagnation"],
-        columnStyle: "advice"
+        columnStyle: "advice",
+        likes: 156
     },
     {
         id: 20,
@@ -217,6 +236,7 @@ export const columns = [
         major: "통계학과",
         summary: "시기별로 찾아오는 위기가 다름. 3월의 초심, 6월의 매너리즘, 9월의 불안감을 어떻게 관리해야 하는지 구체적인 로드맵을 제시함.",
         relatedTypes: ["Mock Exam", "Grade Stagnation"],
-        columnStyle: "empathy"
+        columnStyle: "empathy",
+        likes: 310
     }
 ];
