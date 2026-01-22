@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with Vite (docs outDir)
+        run: npm run build
+
+      - name: Deploy (docs 폴더 => main 브랜치 유지)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: main  # main 브랜치/dogs에 그대로 커밋
+          keep_files: true      # docs 외의 기존 파일들(소스)도 유지
+          allow_empty_commit: false
+
+      # 위 peaceiris/actions-gh-pages는 branch를 따로 두지 않고, 
+      # main/docs ��더를 관리할 때 "keep_files: true" 옵션을 사용
+      # - main 브랜치의 docs에 빌드파일이 최신화됨
+      # - Settings > Pages 소스는 main /docs로 지정필수
