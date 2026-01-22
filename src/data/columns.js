@@ -1,0 +1,222 @@
+export const columns = [
+    {
+        id: 1,
+        title: "성적이 오르지 않을 때, 내가 놓치고 있는 것",
+        author: "김철수",
+        authorCategory: "성적 향상자",
+        university: "서울대",
+        major: "컴퓨터공학부",
+        summary: "성적이 정체될 때는 학습의 절대량보다는 학습의 질을 점검해야 함. 무의식적인 반복 학습보다는 메타인지를 활용한 약점 분석이 중요하다고 강조함.",
+        relatedTypes: ["Grade Stagnation", "Goal Loss"],
+        columnStyle: "advice"
+    },
+    {
+        id: 2,
+        title: "멘탈이 흔들릴 때 잡는 법: 우선 순위의 마법",
+        author: "이영희",
+        authorCategory: "학습 상담 선생님",
+        university: "연세대",
+        major: "시스템반도체공학과",
+        summary: "불안감은 불확실성에서 옴. 하루에 해야 할 일의 우선순위를 정하고 하나씩 지워나가는 과정에서 성취감을 느끼면 멘탈을 회복할 수 있다고 조언함.",
+        relatedTypes: ["Mental Collapse", "Motivation Loss"],
+        columnStyle: "advice"
+    },
+    {
+        id: 3,
+        title: "체력도 실력이다: 수험생을 위한 10분 운동법",
+        author: "박민수",
+        authorCategory: "TA/SA",
+        university: "고려대",
+        major: "의과대학",
+        summary: "장시간 공부는 체력을 급격히 소모함. 쉬는 시간 10분을 활용한 간단한 스트레칭과 가벼운 산책만으로도 집중력을 유지할 수 있다고 함.",
+        relatedTypes: ["Physical Exhaustion"],
+        columnStyle: "advice"
+    },
+    {
+        id: 4,
+        title: "혼자 공부하는 외로움, 이렇게 극복하세요",
+        author: "최지은",
+        authorCategory: "성적 우수자",
+        university: "성균관대",
+        major: "약학과",
+        summary: "고립감은 공부의 적임. 스터디 카페나 도서관 등 개방된 공간을 활용하거나, '캠스터디' 등을 통해 함께 공부하는 느낌을 받는 것이 좋다고 함.",
+        relatedTypes: ["Isolation"],
+        columnStyle: "empathy"
+    },
+    {
+        id: 5,
+        title: "새로운 환경에 적응하는 3가지 팁",
+        author: "정우성",
+        authorCategory: "컨텐츠 팀",
+        university: "서강대",
+        major: "화공생명공학과",
+        summary: "환경 변화는 누구에게나 스트레스임. 나만의 루틴을 빠르게 만들고, 익숙한 물건을 배치하여 심리적 안정감을 찾는 것이 중요하다고 함.",
+        relatedTypes: ["Environment Maladaptation"],
+        columnStyle: "advice"
+    },
+    {
+        id: 6,
+        title: "목표가 없을 때 공부하는 이유는 무엇인가?",
+        author: "강동원",
+        authorCategory: "학습 상담 선생님",
+        university: "한양대",
+        major: "기계공학부",
+        summary: "거창한 목표보다는 당장 오늘 끝내야 할 분량에 집중하는 것이 좋음. 작은 목표를 달성하다 보면 큰 목표가 보이기 시작한다고 함.",
+        relatedTypes: ["Goal Loss", "Motivation Loss"],
+        columnStyle: "empathy"
+    },
+    {
+        id: 7,
+        title: "모의고사 망쳤다고 인생 망치지 않는다",
+        author: "장동건",
+        authorCategory: "TA/SA",
+        university: "중앙대",
+        major: "의학부",
+        summary: "모의고사는 진단 도구일 뿐임. 틀린 문제를 통해 약점을 발견한 것에 감사하고, 수능 날 틀리지 않으면 된다는 마인드셋을 가져야 한다고 함.",
+        relatedTypes: ["Mock Exam", "Mental Collapse"],
+        columnStyle: "empathy"
+    },
+    {
+        id: 8,
+        title: "선택과목, 지금 바꿔도 늦지 않았을까?",
+        author: "원빈",
+        authorCategory: "성적 향상자",
+        university: "경희대",
+        major: "한의예과",
+        summary: "선택과목 변경은 신중해야 함. 단순히 등급 컷 때문인지, 적성에 맞지 않아서인지 명확히 분석하고, 변경 시 발생할 학습 부담을 고려해야 한다고 함.",
+        relatedTypes: ["Optional Subject"],
+        columnStyle: "advice"
+    },
+    {
+        id: 9,
+        title: "무기력을 이기는 가장 쉬운 방법: 일단 앉아라",
+        author: "현빈",
+        authorCategory: "컨텐츠 팀",
+        university: "한국외대",
+        major: "바이오메디컬공학부",
+        summary: "의욕이 생겨서 행동하는 것이 아니라, 행동하면 의욕이 생김. 일단 책상에 앉아 책을 펼치는 것부터 시작하면 뇌가 공부 모드로 전환된다고 함.",
+        relatedTypes: ["Motivation Loss"],
+        columnStyle: "advice"
+    },
+    {
+        id: 10,
+        title: "나만의 오답노트 작성법",
+        author: "김태희",
+        authorCategory: "성적 우수자",
+        university: "서울대",
+        major: "수리과학부",
+        summary: "오답노트는 예쁘게 만드는 게 아님. 왜 틀렸는지 사고 과정을 복기하고, 다시 틀리지 않으려면 어떤 개념을 봐야 하는지 적는 것이 핵심이라고 함.",
+        relatedTypes: ["Grade Stagnation"],
+        columnStyle: "advice"
+    },
+    {
+        id: 11,
+        title: "수능 D-100, 멘탈 관리법",
+        author: "송혜교",
+        authorCategory: "학습 상담 선생님",
+        university: "세종대",
+        major: "소프트웨어학과",
+        summary: "디데이에 압도되지 말고, 하루하루의 계획을 지키는 것에 집중해야 함. 규칙적인 생활 패턴이 멘탈을 지켜주는 가장 큰 무기라고 함.",
+        relatedTypes: ["Mental Collapse", "Mock Exam"],
+        columnStyle: "empathy"
+    },
+    {
+        id: 12,
+        title: "점심시간 100% 활용 꿀팁",
+        author: "전지현",
+        authorCategory: "TA/SA",
+        university: "동국대",
+        major: "약학과",
+        summary: "점심시간에 영어 단어를 외우거나 듣기 평가를 하는 등 자투리 시간을 활용하면 누적 학습량이 엄청나다고 강조함.",
+        relatedTypes: ["Physical Exhaustion", "Motivation Loss"],
+        columnStyle: "advice"
+    },
+    {
+        id: 13,
+        title: "친구 관계, 공부에 방해될까?",
+        author: "손예진",
+        authorCategory: "학습 상담 선생님",
+        university: "서울예대",
+        major: "디지털아트과",
+        summary: "건강한 라이벌 관계는 시너지를 냄. 하지만 감정 소모가 심한 관계는 과감히 정리하고 공부에 집중하는 것이 필요하다고 조언함.",
+        relatedTypes: ["Isolation"],
+        columnStyle: "empathy"
+    },
+    {
+        id: 14,
+        title: "기숙학원 vs 독학재수, 나에게 맞는 환경은?",
+        author: "공유",
+        authorCategory: "컨텐츠 팀",
+        university: "경희대",
+        major: "정보디스플레이학과",
+        summary: "자기 통제력이 부족하면 관리형 환경이 유리함. 하지만 스스로 계획을 세우고 실천하는 힘이 있다면 독학이 효율적일 수 있다고 비교 분석함.",
+        relatedTypes: ["Environment Maladaptation"],
+        columnStyle: "advice"
+    },
+    {
+        id: 15,
+        title: "대학 선배가 알려주는 슬럼프 탈출기",
+        author: "조인성",
+        authorCategory: "성적 향상자",
+        university: "카이스트",
+        major: "전기전자공학부",
+        summary: "슬럼프는 성장의 신호임. 자신이 성장하고 있다는 믿음을 가지고 꾸준히 책상 앞에 앉아있는 끈기가 중요하다고 경험담을 공유함.",
+        relatedTypes: ["Grade Stagnation", "Motivation Loss"],
+        columnStyle: "empathy"
+    },
+    {
+        id: 16,
+        title: "탐구영역 선택, 표점이 깡패다?",
+        author: "이정재",
+        authorCategory: "TA/SA",
+        university: "포스텍",
+        major: "신소재공학과",
+        summary: "표준점수만 보고 과목을 선택하는 것은 위험함. 자신이 흥미를 느끼고 꾸준히 공부할 수 있는 과목을 선택하는 것이 고득점의 지름길이라고 함.",
+        relatedTypes: ["Optional Subject"],
+        columnStyle: "advice"
+    },
+    {
+        id: 17,
+        title: "꿈이 바뀌었어요, 어떻게 하죠?",
+        author: "정해인",
+        authorCategory: "학습 상담 선생님",
+        university: "건국대",
+        major: "수의예과",
+        summary: "진로는 언제든 바뀔 수 있음. 중요한 것은 현재의 배움이 미래의 어떤 길로든 연결된다는 믿음을 가지는 것이라고 위로함.",
+        relatedTypes: ["Goal Loss"],
+        columnStyle: "empathy"
+    },
+    {
+        id: 18,
+        title: "체력이 바닥났을 때 먹으면 좋은 간식 추천",
+        author: "박서준",
+        authorCategory: "컨텐츠 팀",
+        university: "이화여대",
+        major: "식품영양학과",
+        summary: "초콜릿 같은 단순 당보다는 견과류나 바나나 등 혈당을 서서히 올리는 간식이 집중력 유지에 더 도움이 된다고 추천함.",
+        relatedTypes: ["Physical Exhaustion"],
+        columnStyle: "advice"
+    },
+    {
+        id: 19,
+        title: "플래너 작성, 시간 낭비일까?",
+        author: "김수현",
+        authorCategory: "성적 우수자",
+        university: "중앙대",
+        major: "AI학과",
+        summary: "계획 없는 공부는 목적지 없는 항해와 같음. 10분 투자로 하루의 효율을 극대화할 수 있는 플래너 작성법을 소개함.",
+        relatedTypes: ["Motivation Loss", "Grade Stagnation"],
+        columnStyle: "advice"
+    },
+    {
+        id: 20,
+        title: "재수생의 3월, 6월, 9월 위기 대처법",
+        author: "아이유",
+        authorCategory: "성적 향상자",
+        university: "숙명여대",
+        major: "통계학과",
+        summary: "시기별로 찾아오는 위기가 다름. 3월의 초심, 6월의 매너리즘, 9월의 불안감을 어떻게 관리해야 하는지 구체적인 로드맵을 제시함.",
+        relatedTypes: ["Mock Exam", "Grade Stagnation"],
+        columnStyle: "empathy"
+    }
+];

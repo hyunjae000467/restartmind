@@ -1,0 +1,200 @@
+:root {
+  /* MD3 Spec-ish Tokens (Monochrome) */
+  --primary-color: #000000;
+  --on-primary: #FFFFFF;
+  --primary-container: #E0E0E0;
+  --on-primary-container: #191c20;
+
+  --secondary-color: #5d5f5e;
+
+  --bg-color: #FFFFFF;
+  --surface: #F9F9F9;
+  --surface-variant: #F0F0F0;
+
+  --text-main: #1b1b1f;
+  --text-secondary: #454746;
+
+  --outline: #757780;
+  --border-radius: 16px;
+  /* MD3 Card Radius */
+
+  --shadow-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  /* Elevation 1 */
+  --shadow-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  /* Elevation 2 */
+
+  --font-main: 'Roboto', 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* Centers horizontally on mobile, will override for larger screens if needed, but 'align-items' handles vertical */
+  overflow-x: hidden;
+  padding: 40px;
+  /* Add padding to body */
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  /* Full Width */
+  padding: 0;
+  /* Remove internal padding if desired, or keep small */
+}
+
+/* Tablet & PC Optimization */
+@media (min-width: 768px) {
+  body {
+    justify-content: flex-start;
+    /* Left align content */
+    align-items: flex-start;
+    /* Top align */
+  }
+
+  #root {
+    padding: 0 40px;
+    /* Side padding for larger screens */
+  }
+}
+
+.material-card {
+  background: var(--bg-color);
+  /* Surface */
+  border-radius: var(--border-radius);
+  /* MD3 uses tonal surface or shadow, sticking to shadow for web clarity */
+  box-shadow: var(--shadow-1);
+  padding: 2rem;
+  width: 100%;
+  /* Removed max-width: 600px constraint */
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+  position: relative;
+  border: 1px solid #f0f0f0;
+  /* Reset auto margins if any */
+  margin: 0;
+}
+
+/* Grid Layout for Columns */
+.column-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .column-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    /* Responsive Grid */
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .column-grid>div {
+    height: 100%;
+    /* Equal height cards */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .column-grid>div>p {
+    flex-grow: 1;
+    /* Push footer down */
+  }
+}
+
+/* Specific card styles for columns might need overrides */
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: var(--on-primary);
+  border: none;
+  border-radius: 100px;
+  /* Stadium shape */
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  background-color: #333333;
+  /* Slightly lighter black */
+  box-shadow: var(--shadow-2);
+}
+
+.btn:active {
+  background-color: #000000;
+  box-shadow: var(--shadow-1);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--outline);
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.tag {
+  background: var(--surface-variant);
+  color: var(--text-main);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
