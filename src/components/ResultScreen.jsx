@@ -34,7 +34,8 @@ const ResultScreen = ({ answers, onRestart, onViewAll }) => {
             "Optional Subject": false
         };
 
-        // Initialize scores
+        // Initialize scores for the 8 main types
+        // Exclude the flag types from the score map
         Object.keys(types).forEach(key => {
             if (key !== "Mock Exam" && key !== "Optional Subject") {
                 scores[key] = 0;
@@ -45,16 +46,18 @@ const ResultScreen = ({ answers, onRestart, onViewAll }) => {
             const question = questions.find(q => q.id === ans.questionId);
             if (!question) return;
 
-            if (question.type === 'boolean') {
-                if (ans.value === true) {
+            // Everything is essentially boolean now (Yes/No)
+            // If true (Yes), we perform the action
+            if (ans.value === true) {
+                if (question.targetType === "Mock Exam" || question.targetType === "Optional Subject") {
                     booleanFlags[question.targetType] = true;
-                }
-            } else if (question.type === 'scale') {
-                question.targetType.forEach(tType => {
-                    if (scores[tType] !== undefined) {
-                        scores[tType] += ans.value;
+                } else {
+                    // It's one of the 8 scored types
+                    // targetType is just a string now, not array
+                    if (scores[question.targetType] !== undefined) {
+                        scores[question.targetType] += 1; // +1 point for Yes
                     }
-                });
+                }
             }
         });
 
@@ -64,7 +67,7 @@ const ResultScreen = ({ answers, onRestart, onViewAll }) => {
             .slice(0, 3)
             .map(([key]) => key);
 
-        // Add Boolean Flags if true
+        // Add Boolean Flags if true (Preserving old behavior: Appending them)
         const finalTypes = [...sortedTypes];
         if (booleanFlags["Mock Exam"]) finalTypes.push("Mock Exam");
         if (booleanFlags["Optional Subject"]) finalTypes.push("Optional Subject");
@@ -117,7 +120,7 @@ const ResultScreen = ({ answers, onRestart, onViewAll }) => {
                 },
                 ticks: { display: false, backdropColor: 'transparent' },
                 suggestedMin: 0,
-                suggestedMax: 10
+                suggestedMax: 3
             }
         },
         plugins: {
