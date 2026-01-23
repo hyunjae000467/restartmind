@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "vercel-build": "npm ci && npm run build",
-    "deploy": "gh-pages -d dev"
+    "deploy": "gh-pages -d dist"
   },
   "homepage": "https://hyunjae000467.github.io/restartmind/",
   "dependencies": {
